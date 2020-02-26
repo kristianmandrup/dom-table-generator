@@ -1,4 +1,4 @@
-# Simple Fetch and Table DOM render example
+# API Fetch and Table DOM render library
 
 Perfect, minimalistic library and solution for typical job interview exercise.
 No need to complicate things! Keep it simple :)
