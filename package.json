@@ -1,12 +1,16 @@
 {
   "name": "dom-table-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "DOM table generator using native browser fetch and DOM api",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "dom",
+    "table",
+    "html",
+    "fetch",
+    "generator",
+    "render"
+  ],
+  "author": "Kristian Mandrup",
   "license": "ISC"
 }

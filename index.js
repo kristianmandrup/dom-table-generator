@@ -1,3 +1,13 @@
+function fetchAndRender(url, renderFn) {
+  fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    renderFn(myJson);
+  });
+}
+
 function generateTableHead(table, data, opts = {}) {
   const { decorateHeadCell } = opts
   let thead = table.createTHead();

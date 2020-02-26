@@ -8,8 +8,7 @@ Perfect, minimalistic usable example for job interviews where this is a common e
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="table.js"></script>
-  <script src="fetch-and-render.js"></script>
+  <script src="unpkg.com/dom-table-generator@1.0.0"></script>
   <title>Table</title>
 </head>
 <body>
@@ -40,8 +39,22 @@ Decorators can be passed in to fine-tune the DOM elements being output to the DO
 - `decorateRow(rowEl, { index })`
 - `decorateCell(rowEl, { index, key })`
 
-## Serve the static html page
+## Serve static html page
 
-`npm i serve`
+The `index.html` file included serves an example of how to use the API (helper functions)
 
-Use `serve` to serve `index.html`, f.ex via `npx serve`
+`$ npm i serve` install serve locally (use `-g` to install globally)
+
+Use `serve` to serve `index.html` (use `npx serve` if `serve` package is installed locally)
+
+```sh
+$ serve
+
+Serving!
+
+- Local: http://localhost:5000
+
+Copied local address to clipboard!
+```
+
+`$ open index.html`
