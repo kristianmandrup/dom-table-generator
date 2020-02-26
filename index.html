@@ -17,9 +17,11 @@
         cell.setAttribute("style", "color:green;");
       }
     }
-    fetchAndRender('http://localhost:5000/data/mountains.json', (data) => {
+    const render = (data) => {
       tableFor("#x", data, opts)
-    })    
+    }
+    const transform = (data) => data
+    fetchAndRender('http://localhost:5000/data/mountains.json', {render, transform})
   </script>
 </body>
 </html>

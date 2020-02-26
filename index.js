@@ -1,10 +1,11 @@
-function fetchAndRender(url, renderFn) {
+function fetchAndRender(url, {render, transform}) {
   fetch(url)
   .then((response) => {
     return response.json();
   })
-  .then((myJson) => {
-    renderFn(myJson);
+  .then((jsonData) => {
+    jsonData = (transform && transform(jsonData)) || jsonData
+    render(jsonData);
   });
 }
 

@@ -1,6 +1,7 @@
 # Simple Fetch and Table DOM render example
 
-Perfect, minimalistic usable example for job interviews where this is a common exercise.
+Perfect, minimalistic library and solution for typical job interview exercise.
+No need to complicate things! Keep it simple :)
 
 ```html
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ Perfect, minimalistic usable example for job interviews where this is a common e
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="unpkg.com/dom-table-generator@1.0.0"></script>
-  <title>Table</title>
+  <title>Table: Fetch API data and Render</title>
 </head>
 <body>
   <table id="x"></table>
@@ -22,9 +23,16 @@ Perfect, minimalistic usable example for job interviews where this is a common e
         cell.setAttribute("style", "color:green;");
       }
     }
-    fetchAndRender('http://localhost:5000/data/mountains.json', (data) => {
+
+    const render = (data) => {
       tableFor("#x", data, opts)
-    })
+    }
+
+    // pass your own transform function that might sort and filter the data. 
+    // Use: reduce, filter and sort Array methods
+    const transform = (data) => data
+
+    fetchAndRender('http://localhost:5000/data/mountains.json', {render, transform})
   </script>
 </body>
 </html>
@@ -38,6 +46,20 @@ Decorators can be passed in to fine-tune the DOM elements being output to the DO
 - `decorateHeadCell(thEl, { index })`
 - `decorateRow(rowEl, { index })`
 - `decorateCell(rowEl, { index, key })`
+
+## Transform and Render
+
+Pass a `transform` and `render` function to `fetchAndRender` in the options argument.
+
+```js
+const render = (data) => {
+  tableFor("#x", data, opts)
+}
+const transform = (data) => data
+
+fetchAndRender('http://localhost:5000/data/mountains.json', {render, transform})
+```
+
 
 ## Serve static html page
 
