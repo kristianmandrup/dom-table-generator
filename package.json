@@ -1,6 +1,6 @@
 {
   "name": "dom-table-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DOM table generator using native browser fetch and DOM api",
   "main": "index.js",
   "keywords": [
